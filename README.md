@@ -2,7 +2,7 @@
 
 一个舔狗的终极日记，采用json文件存储，没有数据库。
 
-![](F:\前端学习\Vue\tiangou\screenshot.png)
+![](screenshot.png)
 
 ### 后台文件
 
