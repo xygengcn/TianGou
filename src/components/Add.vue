@@ -70,13 +70,21 @@
             submitForm(formName) {
                 this.$refs[formName].validate((valid) => {
                     if (valid) {
-                        this.$http.post(this.$http.url.add, this.data).then(
+                        this.$http.post('add', this.data).then(
                             res => {
-                                this.$message({
-                                    message: '恭喜你又舔一天',
-                                    type: 'success'
-                                });
-                                this.$router.push('/');
+                                if (res.data == 1) {
+                                    this.$message({
+                                        message: '恭喜你又舔一天',
+                                        type: 'success'
+                                    });
+                                    this.$router.push('/');
+                                } else {
+                                    this.$message({
+                                        message: '舔狗失败',
+                                        type: 'error'
+                                    });
+                                }
+
                             }).catch(err => {
                             this.$message({
                                 message: '舔狗失败',

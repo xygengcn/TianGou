@@ -1,38 +1,40 @@
+import axios from "axios";
 var http = {
-    url: {
-        // add: 'http://localhost/admin.php?act=add',
-        // all: 'http://localhost/admin.php?act=all'
-        add: './admin/admin.php?act=add',
-        all: './admin/admin.php?act=all'
-    }
+    // baseURL: 'http://test.cn/admin/admin.php'
+    baseURL: './admin/admin.php'
 };
-http.get = function (url) {
-    return new Promise(function (resolve) {
-        var xhr = new XMLHttpRequest;
-        xhr.open("GET", url, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                resolve(xhr.responseText);
-            }
-        }
-        xhr.send();
+http.get = function (act, data) {
+    return new Promise((resolve, reject) => {
+        axios.get(this.baseURL, {
+                params: {
+                    act: act,
+                    data: data
+                }
+            }).then(function (res) {
+                resolve(res)
+            })
+            .catch(err => {
+                reject(err)
+            });
     })
 }
-http.post = function (url, data) {
-    var param = '';
+http.post = function (act, data) {
+    let postData = new FormData();
+    postData.append('act', act);
     for (let item in data) {
-        param += item + '=' + data[item] + '&';
-    }
-    return new Promise(function (resolve) {
-        var xhr = new XMLHttpRequest;
-        xhr.open("POST", url, true);
-        xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState == 4 && xhr.status == 200) {
-                resolve(xhr.responseText);
-            }
+        if (typeof data[item] == 'string') {
+            postData.append(item, data[item]);
+        } else {
+            postData.append(item, JSON.stringify(data[item]));
         }
-        xhr.send(param);
+    };
+    return new Promise((resolve, reject) => {
+        axios.post(this.baseURL, postData).then(function (res) {
+                resolve(res)
+            })
+            .catch(err => {
+                reject(err)
+            });
     })
 }
 export default function (Vue, opt) {

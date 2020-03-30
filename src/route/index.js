@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Home from '../components/Home'
 import Index from '../components/Index'
 import Add from '../components/Add'
+import Admin from '../components/Admin'
 
 Vue.use(VueRouter)
 
@@ -12,6 +13,9 @@ const routes = [{
     children: [{
         path: '/',
         component: Index
+    }, {
+        path: '/myadmin',
+        component: Admin
     }, {
         path: '/add',
         component: Add

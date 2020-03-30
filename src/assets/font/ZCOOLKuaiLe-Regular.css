@@ -2,11 +2,7 @@
 
 @font-face {
   font-family: "ZCOOLKuaiLe-Regular";
-  src: url("ZCOOLKuaiLe-Regular.woff2") format("woff2"),
-    url("ZCOOLKuaiLe-Regular.woff") format("woff"),
-    url("ZCOOLKuaiLe-Regular.ttf") format("truetype"),
-    url("ZCOOLKuaiLe-Regular.eot") format("embedded-opentype"),
-    url("ZCOOLKuaiLe-Regular.svg") format("svg");
+  src: url("ZCOOLKuaiLe-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }

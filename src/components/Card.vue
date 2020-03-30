@@ -3,7 +3,7 @@
     <div class="card">
         <h3><img src="../assets/logo.png" alt="" class="card-icon">{{getMyTime(data.datetime)}}
             <span>{{data.weather}}</span><span>{{data.city}}</span></h3>
-        <p> {{data.text}} </p>
+        <div class="text">{{data.text}}</div>
     </div>
 </template>
 <script>
@@ -64,7 +64,7 @@
         transform: rotate(0deg) translate(-45px, -20px) skew(20deg);
     }
 
-    .card p {
+    .card .text {
         font-size: 1.2em;
         margin-top: 15px;
         font-weight: 400;

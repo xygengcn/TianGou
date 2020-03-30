@@ -4,9 +4,17 @@
 
 ![](screenshot.png)
 
+
+
+### 演示地址：
+
+http://tg.xygeng.cn/
+
 ### 后台文件
 
-在public的admin/admin.php，只要负责存储数据
+在public的admin/admin.php，只要负责存储数据，$password存储后台管理登陆地址
+
+默认后台管理地址： 域名+/myadmin
 
 ### 部署
 
