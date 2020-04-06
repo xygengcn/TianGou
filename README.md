@@ -1,6 +1,6 @@
 # Tiangou
 
-一个舔狗的终极日记，采用json文件存储，没有数据库。
+如何做一个合格的舔狗。一个舔狗的终极日记，采用json文件存储，没有数据库。
 
 ![](screenshot.png)
 
@@ -10,11 +10,25 @@
 
 http://tg.xygeng.cn/
 
+
+
+### 源码地址：
+
+https://github.com/xygengcn/TianGou
+
 ### 后台文件
 
-在public的admin/admin.php，只要负责存储数据，$password存储后台管理登陆地址
+在public的admin/admin.php，只要负责存储数据，$password存储后台管理登陆密码
 
-默认后台管理地址： 域名+/myadmin
+默认后台管理地址： 域名+/myadmin，需要部署伪静态
+
+### 伪静态
+
+```
+location / {
+  try_files $uri $uri/ /index.html;
+}
+```
 
 ### 部署
 
