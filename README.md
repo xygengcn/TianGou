@@ -22,6 +22,8 @@ https://github.com/xygengcn/TianGou
 
 默认后台管理地址： 域名+/myadmin，需要部署伪静态
 
+需要在项目的http的index.js里面修改接口
+
 ### 伪静态
 
 ```

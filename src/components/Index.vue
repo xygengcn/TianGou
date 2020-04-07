@@ -2,12 +2,7 @@
 <template>
     <div class="all">
         <div class="post">
-            <el-row :gutter="30">
-                <el-col :xs="24" :sm="24" :md="8" :lg="6" v-for="(item,index) in data" :key="index">
-                    <card :data="item"></card>
-                </el-col>
-            </el-row>
-
+            <card v-for="(item,index) in data" :key="index" :data="item"></card>
         </div>
         <myfooter></myfooter>
     </div>
@@ -59,7 +54,13 @@
     }
 </script>
 <style scoped>
+    .all {
+        min-height: 100%;
+    }
+
     .post {
         margin-bottom: 100px;
+        display: flex;
+        flex-wrap: wrap;
     }
 </style>

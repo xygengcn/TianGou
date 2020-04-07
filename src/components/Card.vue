@@ -24,8 +24,10 @@
     @import "../assets/font/ZCOOLKuaiLe-Regular.css";
 
     .card {
+        width: 20%;
+        box-sizing: border-box;
         font-family: "ZCOOLKuaiLe-Regular";
-        margin: 15px auto;
+        margin: 15px 2.5%;
         min-height: 200px;
         padding: 20px;
         position: relative;
@@ -34,8 +36,27 @@
         border-right: 1px solid #ccc;
         border-bottom-right-radius: 60px 60px;
         box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.2);
+        height: 100%;
+        overflow: auto;
 
     }
+
+    @media screen and (max-width:1024px) {
+
+        .card {
+            width: 40%;
+            margin: 15px 5%;
+        }
+    }
+
+    @media screen and (max-width:768px) {
+
+        .card {
+            width: 100%;
+            margin: 15px;
+        }
+    }
+
 
     .card:before {
         content: '';
