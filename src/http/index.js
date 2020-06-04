@@ -1,7 +1,7 @@
 import axios from "axios";
 var http = {
     // baseURL: 'http://test.cn/admin/admin.php'
-    baseURL: 'http://tg.xygeng.cn/admin/admin.php'
+    baseURL: 'httpS://tg.xygeng.cn/admin/admin.php'
 };
 http.get = function (act, data) {
     return new Promise((resolve, reject) => {
